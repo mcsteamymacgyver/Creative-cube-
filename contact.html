@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Report a Lost Item to Lost & Found</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<style>
+.body {
+  background-color: darkgreen;
+}
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+ul { 
+  list-style: none; 
+}
+
+nav {
+  background:green;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px; 
+  position: sticky;
+  top: 0;
+  z-index: 100; 
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.logo-emoji { 
+  font-size: 17px; 
+}
+
+.logo em {
+  color: yellow;
+  font-style: normal;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-menu a {
+  color: rgba(255,255,255,0.85);
+  font-weight: 700;
+  font-size: 0.93rem;
+  padding: 9px 20px;
+  border-radius: 50px; 
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: yellow;
+  color: darkgreen;
+}
+.page-header h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: darkgreen;
+  margin-bottom: 0.1px;
+}
+.page-header p {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 20px;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.block-title {
+  text-align: center;
+  margin-bottom: 0.2px;
+}
+
+.block-title h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: darkgreen;
+  margin-bottom: 0.2px;
+}
+
+.block-title p {
+  color: var(--text-soft);
+  font-size: 22px;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.underline {
+  width: 52px;
+  height: 4px;
+  background: yellow;
+  border-radius: 4px;
+  margin: 3px auto 0;
+}
+  .sol-grid {
+  display: grid;
+  grid-template-columns: repeat auto-fit, minmax 270px, 1fr;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sol-card {
+  background: white;
+  border: 1.5px solid border;
+  border-top: 4px solid green;
+  border-radius: inherit;
+  padding: 32px 26px;
+  box-shadow: inset;
+  transition: transform 0.2s;
+}
+
+.sol-card:hover { 
+  transform: translateY-5px; 
+}
+
+.sol-card .icon { 
+  font-size: 20px;  
+}
+.sol-card h3 { 
+  font-size: 20px; 
+  font-weight: 900; 
+  color: darkgreen; 
+  margin-bottom: 10px; 
+}
+.sol-card p  { 
+  font-size: 23px; 
+  color: #000000 
+}
+
+.form-bg {
+  background: darkgreen;
+  padding: 72px 48px;
+}
+
+.form-bg .block-title h2 { 
+  color: #fff;
+  text-align: center;
+  margin-top: auto;
+}
+.form-bg .block-title p  { 
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: auto; 
+}
+
+.form-wrap {
+  max-width: 680px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 34px 42px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  text-align: center
+}
+
+.notice {
+  background: yellow;
+  border-left: 4px 4px solid yellow;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 7px;
+  font-weight: 600;
+  text-align: justify; content: icon;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 0.1%;
+  border: 45px solid border;
+  border-radius: 20px;
+  gap: 12%;
+
+}
+
+.fg { 
+  margin-bottom: 20px;
+  padding-right: 30px;
+  margin-top: 0.11%;
+}
+
+.fg label {
+  display: block;
+  font-weight: 800;
+  font-size: 20px;
+  color: darkgreen;
+  margin-bottom: 0.1%
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid border;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: text;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 0.111%;
+}
+
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus {
+  border-color: green;
+  background: #fff;
+  font-size: 20px;
+}
+
+.fg textarea {
+  resize: vertical;
+  min-height: 20px;
+  font-size: 20px;
+}
+
+.fg .hint { 
+  font-size: 20px; 
+  color: #050400; 
+  margin-top: 5px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: green;
+  color: #fff;
+  padding: 3px;
+  border: none;
+  border-radius: 111px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.2px;
+}
+
+.submit-btn:hover {
+  background: darkgreen;
+  transform: translateY(-2px);
+}
+
+.contact-strip {
+  padding: 64px 48px;
+  background: rgb(0, 138, 0);
+  border-radius: inherit;
+  margin-top: 0.3%; 
+}
+.contact-strip h2{
+  text-align: center;
+  color: aliceblue;
+}
+.contact-strip p {
+  text-align: center;
+  text-decoration: solid chartreuse;
+  color: yellow;
+}
+
+.contact-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.c-card {
+  background: white;
+  border: 1.5px solid border;
+  border-radius: inherit;
+  padding: 26px 30px;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: inset;
+}
+
+.c-card .icon { 
+  font-size: 1.8px; 
+  margin-bottom: 8px; 
+  border-radius: 23px;
+  padding: auto;
+}
+.c-card .lbl  { 
+  font-size: 0.8px; 
+  color: green; 
+  font-weight: 700; 
+  margin-bottom: 4px;
+  border-radius: 12px;
+  padding: auto;
+  font-style: italic;
+}
+.c-card .val  { 
+  font-weight: 800; 
+  color: rgb(0, 0, 0); 
+  font-size: 0.93rem;
+  border-radius: 23px;
+  padding: auto;
+  font-style: italic; 
+}
+
+.bg-soft { 
+  background: green; 
+}
+
+
+</style>
+<script>
+    function submitReport() {
+      const name     = document.getElementById('fname').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
+      const itemType = document.getElementById('item-type').value;
+      const desc     = document.getElementById('desc').value.trim();
+      const secret   = document.getElementById('secret').value.trim();
+
+      if (!name | !phone | !itemType | !desc | !secret) {
+        alert('Please fill in all the fields marked with a before submitting.');
+        return;
+      }
+
+      alert(
+        ' Thank you, ' + name + '!\n\n' +
+        'Your lost item report has been submitted.\n\n' +
+        'We will contact you on ' + phone + ' if your item is found.\n\n' +
+        'Remember your secret detail — you will need it to verify your identity.'
+      );
+    }
+  </script>
+  <nav>
+    <div class="logo">
+      Lost<em>&</em>Found
+    </div>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Report Item</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Report & Solutions</h1>
+    <p>
+      Report a lost item, submit a found item, or reach out to us directly. 
+      We're here to help.
+    </p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <h2>What Lost & Found Does to Help</h2>
+      <p>
+        These are the practical ways our platform solves the lost & found 
+        problem in our community.
+      </p>
+      <div class="underline"></div>
+    </div>
+
+    <div class="sol-grid">
+
+      <div class="sol-card">
+        <h3>An Online Reporting Page</h3>
+        <p>
+          Instead of going from office to office hoping someone turned in your 
+          item, you can report it right here anytime, from any phone or computer.
+        </p>
+      </div>
+
+      <div class="sol-card">
+        <h3>One Central Place for All Reports</h3>
+        <p>
+          All lost and found reports are kept in one place. This makes it 
+          easy to compare and match items, so nothing slips through the cracks.
+        </p>
+      </div>
+
+      <div class="sol-card">
+        <h3>Safe Verification Before Handover</h3>
+        <p>
+          We never just hand an item to anyone who claims it. 
+          We always ask questions first to confirm the person is truly the owner.
+        </p>
+      </div>
+
+      <div class="sol-card">
+        <h3>Community Volunteers as Drop Points</h3>
+        <p>
+          We encourage honest community members to become local drop-off points 
+          where found items can be left safely while we track down the owner.
+        </p>
+      </div>
+
+      <div class="sol-card">
+        <h3>Spreading Awareness</h3>
+        <p>
+          We share news about this platform in schools, markets, and taxi parks and other public places 
+          so more people know it exists and can use it when they need it.
+        </p>
+      </div>
+
+      <div class="sol-card">
+        <h3>Quick Contact When a Match Is Found</h3>
+        <p>
+          The moment we find a match for your report, we reach out by call, 
+          SMS, or email so the wait time is as short as possible.
+        </p>
+      </div>
+
+    </div>
+  </div>
+  <div class="form-bg">
+    <div class="block-title">
+      <h2>Report a Lost Item</h2>
+      <p>
+        Fill in the form below. The more details you give, the better 
+        our chances of finding your item.
+      </p>
+      <div class="underline"></div>
+    </div>
+
+    <div class="form-wrap">
+
+      <div class="notice">
+        <b>Please read this first:</b> Give accurate and honest details about your item. 
+        When we find it, we will ask you questions to confirm you are the real owner. 
+        Only someone who was there when the item was reported will be able to answer correctly.
+      </div>
+
+      <div class="form-row">
+        <div class="fg">
+          <label for="fname">Your Full Name</label>
+          <input type="text" id="fname" placeholder/>
+        </div>
+        <div class="fg">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder/>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="email">Email Address <span style="font-weight:400; color:yellowgreen">(optional)</span></label>
+        <input type="email" id="email" placeholder/>
+      </div>
+      <div class="form-row">
+        <div class="fg">
+          <label for="item-type">What Did You Lose?</label>
+          <select id="item-type">
+            <option value="">Choose item</option>
+            <option>Mobile Phone</option>
+            <option>Wallet / Purse</option>
+            <option>National ID / Passport</option>
+            <option>Bag / Backpack</option>
+            <option>Keys</option>
+            <option>Laptop / Tablet</option>
+            <option>Jewellery</option>
+            <option>Clothing / Shoes</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="date-lost">When Did You Lose It?</label>
+          <input type="date" id="date-lost"/>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="location">Where Did You Last Have It?</label>
+        <input type="text" id="location" placeholder/>
+      </div>
+
+      <div class="fg">
+        <label for="desc">Describe Your Item in Detail</label>
+        <textarea id="desc" placeholder="Tell us everything about it"></textarea>
+      </div>
+
+      <div class="fg">
+        <label for="secret">One Secret Detail Only You Know</label>
+        <input type="text" id="secret" placeholder/>
+        <p class="hint">
+          This is your key for verification. When your item is found, we will ask you this. 
+          <b>Do not share it with anyone.</b>
+        </p>
+      </div>
+
+      <button class="submit-btn" onclick="submitReport()">
+      Submit My Report
+      </button>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="block-title">
+      <h2>Want to Talk to Us Directly?</h2>
+      <p>
+        Found something and want to hand it in? 
+        Have a question about a report you made? Reach us here.
+      </p>
+      <div class="underline"></div>
+    </div>
+
+    <div class="contact-cards">
+      <div class="c-card">
+        <div class="lbl">Call Us</div>
+        <div class="val">+256 741422053</div>
+      </div>
+      <div class="c-card">
+        <div class="lbl">Email Us</div>
+        <div class="val">info@lost&found.org</div>
+      </div>
+      <div class="c-card">
+        <div class="lbl">We're Based In</div>
+        <div class="val">Kampala, Mukono</div>
+      </div>
+      <div class="c-card">
+        <div class="lbl">Working Hours</div>
+        <div class="val">MONDAY to FRIDAY, 8am to 4pm</div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>
