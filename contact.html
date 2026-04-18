@@ -331,33 +331,13 @@ nav {
 
 
 </style>
-<script>
-    function submitReport() {
-      const name     = document.getElementById('fname').value.trim();
-      const phone    = document.getElementById('phone').value.trim();
-      const itemType = document.getElementById('item-type').value;
-      const desc     = document.getElementById('desc').value.trim();
-      const secret   = document.getElementById('secret').value.trim();
-
-      if (!name | !phone | !itemType | !desc | !secret) {
-        alert('Please fill in all the fields marked with a before submitting.');
-        return;
-      }
-
-      alert(
-        ' Thank you, ' + name + '!\n\n' +
-        'Your lost item report has been submitted.\n\n' +
-        'We will contact you on ' + phone + ' if your item is found.\n\n' +
-        'Remember your secret detail — you will need it to verify your identity.'
-      );
-    }
-  </script>
+<script src="script.js"></script>
   <nav>
-    <div class="logo">
-      Lost<em>&</em>Found
-    </div>
+    <div class="logo">Lost<em>&</em>Found</div>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
     <div class="nav-menu">
       <a href="index.html">Home</a>
+      <a href="index.html#lost-items">Browse</a>
       <a href="about.html">About</a>
       <a href="contact.html" class="active">Report Item</a>
     </div>
@@ -462,7 +442,7 @@ nav {
         </div>
       </div>
       <div class="fg">
-        <label for="email">Email Address <span style="font-weight:400; color:yellowgreen">(optional)</span></label>
+        <label for="email">Email Address <span class="optional">(optional)</span></label>
         <input type="email" id="email" placeholder/>
       </div>
       <div class="form-row">
@@ -542,5 +522,6 @@ nav {
   </div>
   
 
+  <script src="script.js"></script>
 </body>
 </html>

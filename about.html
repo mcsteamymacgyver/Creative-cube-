@@ -7,256 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<style>
-  
-.page-header {
-  background: linear-gradient(160deg, darkgreen, green);
-  color: #e60707;
-  padding: 60px 50px;
-  text-align: center;
-  text-decoration: solid;
-  text-transform: inherit;
-}
 
-.page-header h1 {
-  color: #d5fa04;
-  font-size: 19px;
-  font-weight: 900;
-  margin-bottom: .01px;
-  gap: inherit;
-}
-
-.page-header p {
-  color: rgb(253, 252, 252);
-  max-width: 500px;
-  margin-inline: auto;
-  font-size: 19px;
-}
-
-.block-title {
-  text-align: center;
-  margin-inline: auto;
-  font-weight: 333;
-  padding: 38px 34px;
-  border-radius: 3%;
-  background: rgb(2, 138, 2);
-  gap: inherit;
-  margin-top: 0.1%;
-}
- .block-title h2 {
-  color: #d5fa04;
-  font-size: 32px;
-  font-weight: 900;
-  margin-bottom: 0.2%;
-}
-.block-title p {
-   color: rgb(253, 252, 252);
-  max-width: 500px;
-  margin-inline: auto;
-  font-size: 23px;
-}
-.two-col {
-  display:grid;
-  grid-template-columns: auto;
-  gap: 36px;
-  max-width: 960px;
-  margin: 0 auto;
-  align-items: start;
-  border-radius: 11%;
-}
-
-.problem-box {
-  background: darkgreen;
-  color: #e90808;
-  border-radius: 11%;
-  padding: 38px 34px;
-  gap: initial;
-  margin-top: 0.1%;
-}
-
-.problem-box h3 {
-  color: yellow;
-  font-size: 19px;
-  margin-bottom: 0.1px;
-  text-align: center;
-}
-
-.problem-box p {
-  color: rgb(255, 255, 255);
-  font-size: 19px;
-  margin-bottom: 0.2%;
-  text-align: center;
-}
-
-.check-list { margin-top: 10px; }
-
-.check-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 9px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  color: rgba(253, 249, 249, 0.993);
-  font-size: 19px;
-}
-
-.check-list li .icon { 
-  font-size: 19px;
-  flex-shrink: 0; 
-  margin-top: 0.2%;
- }
-
-.white-box {
-  background: rgb(7, 155, 1);
-  border: 1.5px solid border;
-  border-radius: 2%;
-  padding: 32px;
-  box-shadow: inset;
-  margin-bottom: 0.2%;
-}
-
-.white-box h3 {
-  font-size: 19px;
-  font-weight: 900;
-  color: darkgreen (1, 63, 1);
-  padding-bottom: 12px;
-  border-bottom: 4px solid yellow;
-  margin-bottom: 0.1px;
-  color: #d5fa04;
-}
-
-.white-box p {
-  color: darkgreen (1, 63, 1);
-  font-size: 19px;
-  margin-bottom: 0.1px;
-color: white;
-}
-
-.team-row {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.team-card {
-  background: rgb(0, 133, 18);
-  border: 1.5px solid border;
-  border-radius: 1%;
-  padding: 30px 24px;
-  text-align: center;
-  width: 200px;
-  box-shadow: #3dcf7c;
-  margin-top: 2%;
-}
-
-.avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: rgb(253, 255, 253);
-  color: #fff;
-  font-size: 19px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.2px;
-}
-
-.team-card h4 { 
-  font-weight: 900;
-  color: rgb(1, 126, 1); 
-  margin-bottom: 4px; 
-}
-
-.team-card span {
-   font-size: 19px; 
-   color: #00bdfc;
-   }
-   .step-card h3 {
-    background-color: darkgreen;
-    text-align: center;
-    font-size: 24px;
-    color: #d5fa04;
-   }
-   .step-card p {
-    background-color: darkgreen;
-    text-align: center;
-    margin-bottom: 0.21%;
-    font-size: medium;
-    color: antiquewhite;
-    padding: auto;
-    font-size: 19px;
-   }
-
-a { 
-  text-decoration: none; 
-  color: inherit; 
-}
-
-ul { 
-  list-style: none; 
-}
-
-nav {
-  background:green;
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px; 
-  position: sticky;
-  top: 0;
-  z-index: 100; 
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.3px;
-}
-
-.logo em {
-  color: yellow;
-  font-style: normal;
-  font-size: 55px;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 11px;
-}
-
-.nav-menu a {
-  color: rgba(255,255,255,0.85);
-  font-weight: 700;
-  font-size: 15px;
-  padding: 9px 20px;
-  border-radius: 50px; 
-  transition: background 0.2s, color 0.2s;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-  background: yellow;
-  color: darkgreen;
-}
-
-</style>
   <nav>
-    <div class="logo">
-      Lost<em>&</em>Found
-    </div>
+    <div class="logo">Lost<em>&</em>Found</div>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
     <div class="nav-menu">
       <a href="index.html">Home</a>
+      <a href="index.html#lost-items">Browse</a>
       <a href="about.html" class="active">About</a>
       <a href="contact.html">Report Item</a>
     </div>
@@ -285,7 +42,7 @@ nav {
           people lose things every single day in our Village. 
         </p>
         <p>
-          And the sad part? <b style="color:yellow ">Most of those items are never returned.</b> 
+          And the sad part? <b class="highlight">Most of those items are never returned.</b> 
           Not because nobody found them but because there was <em>no way</em> 
           for the finder to reach the owner.
         </p>
@@ -320,12 +77,12 @@ nav {
 
         <div class="white-box">
           <h3>Where Items Are Commonly Lost</h3>
-          <ul class="check-list" style="color: rgb(179, 247, 44);">
-            <li style="color:blue">Taxis and bus parks</li>
-            <li style="color:#52d3fa;">Markets and shopping areas</li>
-            <li style="color:blue">Schools, colleges & universities</li>
-            <li style="color:#52d3fa">Hospitals & health centres</li>
-            <li style="color:blue">Churches & mosques</li>
+          <ul class="check-list" >
+            <li class="check-item check-item--blue">Taxis and bus parks</li>
+            <li class="check-item check-item--teal">Markets and shopping areas</li>
+            <li class="check-item check-item--blue">Schools, colleges & universities</li>
+            <li class="check-item check-item--teal">Hospitals & health centres</li>
+            <li class="check-item check-item--blue">Churches & mosques</li>
           </ul>
         </div>
       </div>
@@ -333,7 +90,7 @@ nav {
     </div>
   </div>
 
-  <div class="block bg-soft">
+  <div class="container block bg-soft">
     <div class="block-title">
       <h2>How We Make Sure the Right Person Gets the Item</h2>
       <p>
@@ -368,7 +125,7 @@ nav {
       </div>
     </div>
 
-    <p style="text-align:center; margin-top:32px; color: rgb(19, 101, 253); font-size: 1.9; max-width: 660px; margin-inline: auto;background-color: rgb(90, 248, 90);">
+    <p class="notice-paragraph">
       This system means that even if someone tries to fake being the owner, 
       they won't be able to pass the verification because they weren't 
       there when the item was reported.
@@ -385,23 +142,24 @@ nav {
       <div class="underline"></div>
     </div>
 
-    <div class="team-row">
-      <div class="team-card">
-      <span>Team Lead</span>
-      <div class="avatar" style="background:#52d3fa;">WASSWA AMOS</div>
-      </div>
-
-      <div class="team-card">
-        <span>Research & Content</span>
-        <div class="avatar" style="background:#2c6e49;">WANANDA RAJAB MAHAD</div>
-      </div>
-
-      <div class="team-card">
-        <span>Design & Testing</span>
-        <div class="avatar" style="background:#5a3e2b;">WAKERA VITALIS</div>
-      </div>
-
-    </div>
+   <div class="team-row" style="display:flex;gap:32px;justify-content:center;align-items:stretch;flex-wrap:nowrap;margin-top:24px;">
+  <div class="team-card" style="flex:1;max-width:220px;min-width:180px;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 30px rgba(20,30,20,0.06);background:#fff;border-radius:10px;padding:22px;">
+    <img src="pexels-pixabay-371285.jpg" alt="WASSWA AMOS" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+    <h4 style="margin:8px 0 4px 0;font-size:1.1rem;">WASSWA AMOS</h4>
+    <span style="color:#556169;font-size:1rem;font-weight:600;">Team Lead</span>
   </div>
+  <div class="team-card" style="flex:1;max-width:220px;min-width:180px;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 30px rgba(20,30,20,0.06);background:#fff;border-radius:10px;padding:22px;">
+    <img src="pexels-pixabay-371285.jpg" alt="WANANDA RAJAB MAHAD" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+    <h4 style="margin:8px 0 4px 0;font-size:1.1rem;">WANANDA RAJAB MAHAD</h4>
+    <span style="color:#556169;font-size:1rem;font-weight:600;">Research & Content</span>
+  </div>
+  <div class="team-card" style="flex:1;max-width:220px;min-width:180px;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 30px rgba(20,30,20,0.06);background:#fff;border-radius:10px;padding:22px;">
+    <img src="pexels-pixabay-371285.jpg" alt="WAKERA VITALIS" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+    <h4 style="margin:8px 0 4px 0;font-size:1.1rem;">WAKERA VITALIS</h4>
+    <span style="color:#556169;font-size:1rem;font-weight:600;">Design & Testing</span>
+  </div>
+</div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

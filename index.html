@@ -7,390 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<style>
-  
-:root {
-  --green:       #1dca65;   
-  --green-dark:  #1e5c39; 
-  --green-soft:  #e8f5ee; 
-  --yellow:      #f8c220;
-  --yellow-soft: #f5e6ab;   
-  --white:       #ffffff;  
-  --off-white:   #f9f7f3;   
-  --text:        #161616;   
-  --text-soft:   #424141;   
-  --border:      #dde8e2;   
-  --shadow:      0 4px 20px rgba(0,0,0,0.08); 
-  --radius:      17px;
-  --nav-height:  70px;
-}
-
- ::before, ::after {
-  box-sizing: border-box; 
-  margin: 0;   
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  background: white;
-  color: rgb(35, 48, 48);
-  font-size: 16px; 
-  line-height: 1.75;  
-}
-
-h1, h2, h3 { 
-  line-height: 1.25; 
-}
-
-a { 
-  text-decoration: none; 
-  color: inherit; 
-}
-
-ul { 
-  list-style: none; 
-}
-
-nav {
-  background:green;
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px; 
-  position: sticky;
-  top: 0;
-  z-index: 100; 
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.3px;
-}
-
-.logo-emoji { 
-  font-size: 1.7rem; 
-}
-
-.logo em {
-  color: yellow;
-  font-style: normal;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 6px;
-}
-
-.nav-menu a {
-  color: rgba(255,255,255,0.85);
-  font-weight: 700;
-  font-size: 0.93rem;
-  padding: 9px 20px;
-  border-radius: 50px; 
-  transition: background 0.2s, color 0.2s;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-  background: yellow;
-  color: darkgreen;
-}
-
-.hero {
-  background: linear-gradient(160deg, darkgreen 0%, green 100%);
-  color: #fff;
-  padding: 80px 48px 90px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '🔍';
-  position: absolute;
-  font-size: 18rem;
-  opacity: 0.05;
-  right: -40px;
-  top: -40px;
-  line-height: 1;
-}
-
-.hero-tag {
-  display: inline-block;
-  background: rgba(245,200,66,0.2);
-  border: 1.5px solid yellow;
-  color: rgb(245, 245, 89);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 5px 18px;
-  border-radius: 50px;
-  margin-bottom: 22px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 18px;
-  max-width: 640px;
-  margin-inline: auto;
-  color: #fff;
-}
-
-.hero h1 em {
-  color: yellow;
-  font-style: normal;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.82);
-  max-width: 520px;
-  margin: 0 auto 36px;
-  font-weight: 400;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.97rem;
-  cursor: pointer;
-  border: none;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.btn-yellow  { 
-  background: yellow; 
-  color: darkgreen; 
-}
-
-.btn-white   { 
-  background: #fff; 
-  color: green; 
-}
-
-.btn-green   { 
-  background:green; 
-  color: #fff; 
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.5);
-  color: #fff;
-}
-
-.btn-outline:hover {
-  border-color: yellow;
-  color: yellow;
-  box-shadow: none;
-}
-
-.story {
-  padding: 72px 48px;
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.story .emoji-big {
-  font-size: 4rem;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.story h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: darkgreen;
-  margin-bottom: 16px;
-}
-
-.story p {
-  font-size: 1.05rem;
-  color: var(--text-soft);
-  margin-bottom: 14px;
-  font-family: 'Lora', serif;
-  font-style: italic;
-}
-
-.story p b {
-  color: var(--text);
-  font-style: normal;
-  font-family: 'Nunito', sans-serif;
-}
-
-.block {
-  padding: 64px 48px;
-}
-
-.block-title {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.block-title h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: darkgreen;
-  margin-bottom: 8px;
-}
-
-.block-title p {
-  color: var(--text-soft);
-  font-size: 1rem;
-  max-width: 480px;
-  margin-inline: auto;
-}
-
-.underline {
-  width: 52px;
-  height: 4px;
-  background: yellow;
-  border-radius: 4px;
-  margin: 12px auto 0;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.step-card {
-  background: white;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s;
-}
-
-.step-card:hover { transform: translateY(-6px); }
-
-.step-num {
-  width: 44px;
-  height: 44px;
-  background: rgb(23, 54, 23);
-  color: #fff;
-  border-radius: 50%;
-  font-weight: 900;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 14px;
-}
-
-.step-card .icon { 
-  font-size: 2.4rem; 
-  margin-bottom: 12px; 
-}
-
-.step-card h3 {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--green-dark);
-  margin-bottom: 8px;
-}
-
-.step-card p { 
-  font-size: 0.92rem; 
-  color: var(--text-soft); 
-}
-
-.stats-band {
-  background: var(--green-dark);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.stat {
-  padding: 40px 52px;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-
-.stat:last-child { 
-  border-right: 
-  none; 
-}
-
-.stat .big {
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: yellow;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.stat .label {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.cta-banner {
-  background: var(--yellow-soft);
-  border-top: 2px solid yellow;
-  border-bottom: 2px solid yellow;
-  padding: 60px 48px;
-  text-align: center;
-}
-
-.cta-banner h2 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: darkgreen;
-  margin-bottom: 10px;
-}
-
-.cta-banner p {
-  color: darkgreen;
-  margin-bottom: 26px;
-  font-size: 1rem;
-  max-width: 460px;
-  margin-inline: auto;
-}
-</style>
+<!-- styles moved to style.css -->
 
   <nav>
-    <div class="logo"></div>
+    <div class="logo">Lost<em>&</em>Found</div><button class="menu-toggle" aria-label="Menu">☰</button>
     <div class="nav-menu">
       <a href="index.html" class="active">Home</a>
+      <a href="index.html#lost-items">Browse</a>
       <a href="about.html">About</a>
       <a href="contact.html">Report Item</a>
     </div>
@@ -410,6 +33,35 @@ nav {
     </div>
   </div>
 
+  <div id="lost-items" class="container block">
+    <div class="block-title">
+      <h2>Recent Lost Items</h2>
+      <p>Browse recently reported items. If you find one, click Report Found.</p>
+      <div class="underline"></div>
+    </div>
+
+    <div class="lost-grid">
+      <div class="lost-card card">
+        <img src="pexels-pixabay-371285.jpg" alt="Black smartphone" class="lost-img">
+        <h3>Black Smartphone</h3>
+        <div class="lost-meta">Market • 2026-04-10</div>
+        <a href="contact.html" class="btn btn--primary">Report Found</a>
+      </div>
+      <div class="lost-card card">
+        <img src="pexels-pixabay-371285.jpg" alt="Brown Wallet" class="lost-img">
+        <h3>Brown Wallet</h3>
+        <div class="lost-meta">Taxi Park • 2026-04-12</div>
+        <a href="contact.html" class="btn btn--primary">Report Found</a>
+      </div>
+      <div class="lost-card card">
+        <img src="pexels-pixabay-371285.jpg" alt="Keys on floor" class="lost-img">
+        <h3>Set of Keys</h3>
+        <div class="lost-meta">School • 2026-04-15</div>
+        <a href="contact.html" class="btn btn--primary">Report Found</a>
+      </div>
+    </div>
+  </div>
+
   <div class="story">
     <h2>Have You Ever Lost Something Important?</h2>
     <p>
@@ -424,6 +76,12 @@ nav {
     <p>
       <b>That is the problem we are solving.</b>
     </p>
+  </div>
+
+  <div class="image-row container">
+    <img src="pexels-pixabay-371285.jpg" alt="community" class="thumb">
+    <img src="pexels-pixabay-371285.jpg" alt="people" class="thumb">
+    <img src="pexels-pixabay-371285.jpg" alt="help" class="thumb">
   </div>
 
   <div class="block bg-soft">
@@ -530,5 +188,6 @@ nav {
     <a href="contact.html" class="btn btn-green">Report My Lost Item Now </a>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
